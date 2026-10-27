@@ -1,0 +1,161 @@
+/* Video Editor — tool styles only (the kit provides the rest). */
+.ve-main { max-width: 1680px; padding-bottom: 40px; }
+.ve-hero { padding: 10px 0 8px; display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
+.ve-hero h1 { font-size: clamp(22px, 3vw, 26px); margin: 0; }
+.ve-hero p { font-size: 14px; max-width: 900px; }
+.ve-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.ve-sep { width: 1px; align-self: stretch; background: var(--line); margin: 2px 4px; }
+.ve-app .card { padding: 12px; }
+.ve-app h2 { font-size: 15px; margin: 0; }
+.ve-hint { font-size: 12.5px; margin: 8px 0 0; }
+
+/* top bar */
+.ve-bar { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; padding: 6px 12px !important; margin-bottom: 8px; }
+.ve-bar-l, .ve-bar-r { gap: 6px; flex-wrap: wrap; }
+.ve-name-wrap { flex: 1; min-width: 140px; display: flex; }
+.ve-name { flex: 1; max-width: 360px; margin: 0 auto; text-align: center; font-weight: 600; background: transparent; border-color: transparent; }
+.ve-name:hover, .ve-name:focus { border-color: var(--line-strong); background: var(--surface-2); }
+
+/* work area */
+.ve-work { display: grid; grid-template-columns: 272px minmax(0, 1fr) 300px; gap: 10px; align-items: stretch; }
+.ve-side, .ve-insp { min-width: 0; display: flex; flex-direction: column; height: 368px; overflow: auto; }
+.ve-insp .stack { gap: 10px; }
+.ve-tabs { width: 100%; margin-bottom: 10px; flex-wrap: nowrap; }
+.ve-tabs button { flex: 1; padding: 6px 4px; font-size: 12px; display: inline-flex; flex-direction: column; align-items: center; gap: 2px; }
+.ve-tabs .i { width: 16px; height: 16px; }
+.ve-panel { min-height: 0; }
+.ve-drop { padding: 14px 10px; gap: 4px; text-align: center; font-size: 13px; }
+.ve-drop .i { width: 22px; height: 22px; }
+.ve-bin { display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 8px; margin-top: 10px; }
+.ve-item { position: relative; border-radius: var(--radius-sm); overflow: hidden; background: var(--surface-2); border: 1px solid var(--line); cursor: grab; aspect-ratio: 16 / 11; }
+.ve-item img, .ve-ph-img { width: 100%; height: 100%; object-fit: cover; display: grid; place-items: center; font-size: 12px; color: var(--text-3); }
+.ve-item.k-audio img { object-fit: fill; padding: 18% 6%; background: linear-gradient(135deg, #3b2a6b, #1f4e6b); }
+.ve-item.loading { cursor: progress; animation: ve-pulse 1.2s infinite alternate; }
+.ve-item.missing { border-color: var(--warn); cursor: pointer; }
+.ve-item.missing .ve-ph-img { color: var(--warn); }
+@keyframes ve-pulse { from { opacity: .45; } to { opacity: 1; } }
+.ve-dur { position: absolute; right: 4px; top: 4px; font-size: 10.5px; padding: 1px 5px; border-radius: 5px; background: rgba(0,0,0,.6); color: #fff; }
+.ve-iname { position: absolute; left: 0; right: 0; bottom: 0; padding: 14px 6px 4px; font-size: 11px; color: #fff; background: linear-gradient(transparent, rgba(0,0,0,.75)); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ve-iact { position: absolute; left: 4px; top: 4px; display: flex; gap: 3px; }
+.ve-iact .btn { width: 24px; height: 24px; min-height: 0; padding: 0; border-radius: 7px; }
+.ve-iact .btn .i { width: 14px; height: 14px; }
+.ve-presets { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+.ve-preset { display: grid; gap: 4px; padding: 4px; border-radius: var(--radius-sm); border: 1px solid var(--line); background: var(--surface-2); font-size: 11.5px; color: var(--text-2); cursor: pointer; }
+.ve-preset:hover, .ve-preset:focus-visible { border-color: var(--accent); color: var(--text); }
+.ve-preset canvas { width: 100%; height: auto; border-radius: 6px; display: block; }
+.ve-capstyle { width: 100%; }
+.ve-capstyle button { flex: 1; }
+.ve-caplist { display: grid; gap: 6px; max-height: 170px; overflow: auto; }
+.ve-cap { display: grid; grid-template-columns: auto 1fr auto; gap: 4px; align-items: center; }
+.ve-cap .input { padding: 6px 8px; font-size: 13px; min-height: 0; }
+.ve-cap.sel .input { border-color: var(--accent); }
+.ve-cap .btn.mono { font-size: 11px; padding: 4px 6px; }
+.ve-script { min-height: 70px; }
+.ve-trans { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 10px 0; }
+.ve-tr { text-align: start; display: grid; gap: 2px; padding: 9px 10px; border-radius: var(--radius-sm); border: 1px solid var(--line); background: var(--surface-2); font-size: 12px; cursor: pointer; color: var(--text); }
+.ve-tr b { font-size: 13px; }
+.ve-tr.on { border-color: var(--accent); background: var(--accent-soft); }
+
+/* preview */
+.ve-stage { display: flex; flex-direction: column; gap: 8px; min-width: 0; height: 368px; }
+.ve-view { --ar: 9 / 16; position: relative; flex: 1; min-height: 0; display: grid; place-items: center; background: #07080a; border-radius: var(--radius-sm); overflow: hidden; }
+.ve-view canvas { display: block; background: #000; cursor: pointer; }
+.ve-empty { position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; gap: 6px; color: #c9ced8; text-align: center; padding: 16px; font-size: 13.5px; background: rgba(7,8,10,.82); }
+.ve-empty b { font-size: 16px; color: #fff; }
+.ve-transport { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.ve-play { width: 40px; height: 40px; border-radius: 50%; padding: 0; }
+.ve-tc { font-size: 13px; color: var(--text-2); min-width: 118px; }
+.ve-aspect button { padding: 5px 9px; font-size: 12px; }
+#loopBtn[aria-pressed="true"], .ve-tl-bar .btn[aria-pressed="true"] { color: var(--accent); background: var(--accent-soft); }
+
+/* inspector */
+.ve-insp h2 { margin-bottom: 2px; }
+.ve-mname { margin: 0 0 6px; font-size: 12px; word-break: break-all; }
+.ve-insp input[type="range"] { width: 100%; }
+.ve-insp .grid-2 { gap: 10px; }
+.ve-iseg { flex-wrap: wrap; }
+.ve-iseg button { padding: 5px 9px; font-size: 12px; }
+.ve-chips { gap: 4px; }
+.ve-chips .btn { padding: 3px 8px; min-height: 0; font-size: 12px; }
+.ve-iacts { gap: 6px; padding-top: 6px; border-top: 1px solid var(--line); }
+.ve-insp input[type="color"] { width: 44px; height: 32px; padding: 0; border: 1px solid var(--line); border-radius: 8px; background: none; }
+.ve-insp .stats { grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.ve-insp .stat { padding: 8px; }
+.ve-insp .stat b { font-size: 15px; }
+.ve-warn { color: var(--warn); }
+
+/* timeline */
+.ve-tl { margin-top: 8px; padding: 6px 10px 10px !important; }
+.ve-tl-bar { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-bottom: 6px; }
+.ve-zoom input { width: 120px; }
+.ve-tl-body { display: grid; grid-template-columns: 112px minmax(0, 1fr); border: 1px solid var(--line); border-radius: var(--radius-sm); overflow: hidden; background: var(--surface-2); }
+.ve-heads { border-right: 1px solid var(--line); background: var(--surface); }
+.ve-head-ruler { height: 24px; border-bottom: 1px solid var(--line); }
+.ve-head { display: flex; align-items: center; gap: 0; padding: 0 2px 0 8px; border-bottom: 1px solid var(--line); font-size: 11.5px; color: var(--text-2); }
+.ve-head .btn { width: 24px; height: 24px; min-height: 0; padding: 0; }
+.ve-head .btn .i { width: 14px; height: 14px; }
+.ve-tname { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 600; }
+.ve-scroll { overflow-x: auto; overflow-y: hidden; position: relative; }
+.ve-inner { position: relative; min-width: 100%; }
+.ve-ruler { position: relative; height: 24px; border-bottom: 1px solid var(--line); cursor: ew-resize; user-select: none; background: var(--surface); }
+.ve-ruler i { position: absolute; bottom: 0; width: 1px; height: 5px; background: var(--line-strong); }
+.ve-ruler i.mj { height: 10px; background: var(--text-3); }
+.ve-ruler span { position: absolute; top: 2px; font-size: 10px; color: var(--text-3); font-variant-numeric: tabular-nums; }
+.ve-lane { position: relative; border-bottom: 1px solid var(--line); }
+.ve-lane.k-video .ve-clip { top: 8px; }
+.ve-lane.k-video { background: rgba(127,127,127,.04); }
+.ve-clip { position: absolute; top: 3px; bottom: 3px; border-radius: 7px; overflow: hidden; cursor: grab; user-select: none; touch-action: none;
+  background-color: #334155; background-repeat: repeat-x; background-size: auto 100%; border: 1px solid rgba(255,255,255,.14); color: #fff; font-size: 11px; }
+.ve-clip.k-image { background-color: #3d4a2f; }
+.ve-clip.k-audio { background-color: #2f5e75; background-size: 100% 100%; background-repeat: no-repeat; }
+.ve-clip.k-text { background: #8a4fd8; }
+.ve-clip.k-caption { background: #c2410c; }
+.ve-clip.missing { background: repeating-linear-gradient(45deg, #5b3b14, #5b3b14 6px, #4a300f 6px, #4a300f 12px); }
+.ve-clip.sel { box-shadow: 0 0 0 2px var(--accent), 0 0 0 4px rgba(0,0,0,.35); z-index: 2; }
+.ve-clip:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.ve-clabel { position: absolute; left: 10px; right: 10px; top: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-shadow: 0 1px 2px rgba(0,0,0,.9); font-weight: 600; pointer-events: none; }
+.ve-lane.k-video .ve-clabel { top: auto; bottom: 3px; }
+.ve-badge { position: absolute; right: 9px; top: 3px; font-size: 10px; padding: 0 4px; border-radius: 4px; background: rgba(0,0,0,.6); pointer-events: none; }
+.ve-badge + .ve-badge { right: 44px; }
+.ve-fade { position: absolute; top: 0; bottom: 0; pointer-events: none; }
+.ve-fade.in { left: 0; background: linear-gradient(90deg, rgba(0,0,0,.65), transparent); }
+.ve-fade.out { right: 0; background: linear-gradient(270deg, rgba(0,0,0,.65), transparent); }
+.ve-hl, .ve-hr { position: absolute; top: 0; bottom: 0; width: 10px; cursor: ew-resize; background: rgba(255,255,255,.0); z-index: 1; }
+.ve-hl { left: 0; border-left: 3px solid rgba(255,255,255,.55); }
+.ve-hr { right: 0; border-right: 3px solid rgba(255,255,255,.55); }
+.ve-clip.sel .ve-hl, .ve-clip.sel .ve-hr { border-color: var(--accent); background: rgba(255,255,255,.12); }
+.ve-cut { position: absolute; top: -5px; width: 14px; height: 14px; transform: rotate(45deg); border-radius: 3px; background: var(--surface); border: 2px solid var(--line-strong); z-index: 3; cursor: pointer; padding: 0; }
+.ve-cut.on { background: var(--accent); border-color: var(--accent); }
+.ve-cut.sel { box-shadow: 0 0 0 3px var(--accent-soft); border-color: var(--accent); }
+.ve-ph { position: absolute; top: 0; bottom: 0; left: 0; width: 2px; margin-left: -1px; background: #ff4d5e; z-index: 5; pointer-events: none; }
+.ve-ph i { position: absolute; top: 0; left: -5px; width: 12px; height: 12px; background: #ff4d5e; border-radius: 2px 2px 6px 6px; }
+.ve-snapline { position: absolute; top: 24px; bottom: 0; left: 0; width: 1px; background: #facc15; z-index: 4; pointer-events: none; }
+.ve-keys { font-size: 12px; margin: 8px 2px 0; }
+
+/* dialogs */
+.ve-dlg { width: min(520px, calc(100vw - 32px)); border: 1px solid var(--line-strong); color: var(--text); padding: 18px !important; }
+.ve-dlg::backdrop { background: rgba(0,0,0,.6); }
+.ve-dlg .stack { gap: 12px; margin: 12px 0; }
+.ve-dlg video { width: 100%; max-height: 50vh; border-radius: var(--radius-sm); background: #000; }
+.ve-bar-prog { height: 10px; border-radius: 6px; background: var(--surface-3); overflow: hidden; }
+.ve-bar-prog i { display: block; height: 100%; width: 0; background: var(--accent); transition: width .2s; }
+.ve-missing { margin: 8px 0 14px; padding-left: 18px; font-size: 13.5px; }
+
+/* smaller screens */
+@media (max-width: 1180px) {
+  .ve-work { grid-template-columns: 250px minmax(0, 1fr); }
+  .ve-insp { grid-column: 1 / -1; height: auto; max-height: none; }
+}
+@media (max-width: 760px) {
+  .ve-app { display: flex; flex-direction: column; gap: 8px; }
+  .ve-work { display: contents; }
+  .ve-bar { order: 0; margin: 0; } .ve-stage { order: 1; } .ve-tl { order: 2; margin: 0; } .ve-side { order: 3; } .ve-insp { order: 4; }
+  .ve-stage { order: -1; height: auto; }
+  .ve-view { height: 56vh; flex: none; }
+  .ve-side { height: auto; max-height: 460px; }
+  .ve-tl-body { grid-template-columns: 76px minmax(0, 1fr); }
+  .ve-head .btn { width: 20px; }
+  .ve-name-wrap { order: 3; flex-basis: 100%; }
+  .ve-keys { display: none; }
+  .ve-zoom input { width: 80px; }
+}

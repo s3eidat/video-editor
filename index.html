@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; media-src 'self' data: blob:; connect-src 'self' data: blob:; worker-src 'self' blob:; manifest-src 'self'; form-action 'none'; base-uri 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Video Editor — Free Online Video Editor for Reels, TikTok &amp; Shorts, No Watermark | S3eidat Tools</title>
+<meta name="description" content="Cut, trim, split and caption videos in your browser. Multi-track timeline, text and Arabic captions, transitions, music with ducking, 9:16 / 1:1 / 16:9, MP4 export. Free, no sign-up, no watermark, nothing uploaded.">
+<meta property="og:title" content="Video Editor — free, private video editor with no watermark">
+<meta property="og:description" content="Timeline, captions, transitions, music and MP4 export. No sign-up, no watermark. Runs 100% in your browser.">
+<link rel="icon" href="kit/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="kit/kit.css">
+<link rel="stylesheet" href="app.css">
+<script src="kit/kit.js"></script>
+<!--s3:seo-->
+<link rel="canonical" href="https://s3eidat.github.io/video-editor/">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#0d0f12">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="S3eidat Tools">
+<meta property="og:url" content="https://s3eidat.github.io/video-editor/">
+<meta property="og:image" content="https://s3eidat.github.io/video-editor/screenshot.png">
+<meta property="og:image:width" content="1280"><meta property="og:image:height" content="800">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Video Editor — Cut, caption and export videos free">
+<meta name="twitter:description" content="Cut, caption and export videos free. Free, private and runs 100% in your browser: no sign-up, no uploads.">
+<meta name="twitter:image" content="https://s3eidat.github.io/video-editor/screenshot.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Video Editor", "url": "https://s3eidat.github.io/video-editor/", "description": "Cut, caption and export videos free. Free, private and runs 100% in your browser: no sign-up, no uploads.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (web browser)", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "image": "https://s3eidat.github.io/video-editor/screenshot.png", "author": {"@type": "Person", "name": "s3eidat", "url": "https://github.com/s3eidat"}}</script>
+<!--/s3:seo-->
+</head>
+<body data-tool="video-editor">
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="v-undo" viewBox="0 0 24 24"><path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11"/></symbol>
+  <symbol id="v-redo" viewBox="0 0 24 24"><path d="m15 14 5-5-5-5"/><path d="M20 9H9.5a5.5 5.5 0 0 0 0 11H13"/></symbol>
+  <symbol id="v-split" viewBox="0 0 24 24"><path d="M12 3v18"/><path d="M8 7 4 12l4 5M16 7l4 5-4 5"/></symbol>
+  <symbol id="v-dup" viewBox="0 0 24 24"><rect x="8.5" y="8.5" width="12" height="12" rx="2"/><path d="M15.5 8.5V5a1.5 1.5 0 0 0-1.5-1.5H5A1.5 1.5 0 0 0 3.5 5v9A1.5 1.5 0 0 0 5 15.5h3.5"/></symbol>
+  <symbol id="v-ripple" viewBox="0 0 24 24"><path d="M3.5 7h7v10h-7zM14 12h7M17.5 9 14 12l3.5 3"/></symbol>
+  <symbol id="v-del" viewBox="0 0 24 24"><path d="M4 7h16M10 11v6M14 11v6M5.5 7l1 12.5a1.5 1.5 0 0 0 1.5 1.5h8a1.5 1.5 0 0 0 1.5-1.5L18.5 7M9 7V4.5h6V7"/></symbol>
+  <symbol id="v-magnet" viewBox="0 0 24 24"><path d="M5 4h4v8a3 3 0 0 0 6 0V4h4v8a7 7 0 0 1-14 0z"/><path d="M5 8h4M15 8h4"/></symbol>
+  <symbol id="v-snap" viewBox="0 0 24 24"><path d="M12 3v18"/><path d="M4 8h5v8H4zM15 8h5v8h-5z"/></symbol>
+  <symbol id="v-loop" viewBox="0 0 24 24"><path d="M17 2.5 20.5 6 17 9.5"/><path d="M3.5 11.5V10a4 4 0 0 1 4-4h13"/><path d="M7 21.5 3.5 18 7 14.5"/><path d="M20.5 12.5V14a4 4 0 0 1-4 4h-13"/></symbol>
+  <symbol id="v-start" viewBox="0 0 24 24"><path d="M5 4v16M19 5 9 12l10 7z"/></symbol>
+  <symbol id="v-end" viewBox="0 0 24 24"><path d="M19 4v16M5 5l10 7-10 7z"/></symbol>
+  <symbol id="v-zin" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m20 20-4.8-4.8M10.5 7.5v6M7.5 10.5h6"/></symbol>
+  <symbol id="v-zout" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m20 20-4.8-4.8M7.5 10.5h6"/></symbol>
+  <symbol id="v-film" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="15" rx="2"/><path d="M7.5 4.5v15M16.5 4.5v15M3.5 9h4M3.5 15h4M16.5 9h4M16.5 15h4"/></symbol>
+  <symbol id="v-text" viewBox="0 0 24 24"><path d="M5 6.5V4.5h14v2M12 4.5v15M9 19.5h6"/></symbol>
+  <symbol id="v-cc" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M10.5 10.2a2.4 2.4 0 1 0 0 3.6M17 10.2a2.4 2.4 0 1 0 0 3.6"/></symbol>
+  <symbol id="v-trans" viewBox="0 0 24 24"><rect x="2.5" y="6" width="9" height="12" rx="1.5"/><rect x="12.5" y="6" width="9" height="12" rx="1.5" opacity=".5"/><path d="m12 9 0 6"/></symbol>
+  <symbol id="v-music" viewBox="0 0 24 24"><path d="M9 18V5.5l11-2V16"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/></symbol>
+  <symbol id="v-vol" viewBox="0 0 24 24"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/></symbol>
+  <symbol id="v-muted" viewBox="0 0 24 24"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="m16 9.5 5 5M21 9.5l-5 5"/></symbol>
+  <symbol id="v-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="v-eyeoff" viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><path d="M4 20 20 4"/></symbol>
+  <symbol id="v-save" viewBox="0 0 24 24"><path d="M5 3.5h11l3.5 3.5v12a1.5 1.5 0 0 1-1.5 1.5H5A1.5 1.5 0 0 1 3.5 19V5A1.5 1.5 0 0 1 5 3.5z"/><path d="M7.5 3.5v5h8v-5M7.5 20.5v-6h9v6"/></symbol>
+  <symbol id="v-folder" viewBox="0 0 24 24"><path d="M3.5 6.5a2 2 0 0 1 2-2h4l2 2.5h7a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></symbol>
+  <symbol id="v-layer" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="12" height="12" rx="2"/><rect x="8.5" y="8.5" width="12" height="12" rx="2"/></symbol>
+</svg>
+<main class="s3-main ve-main">
+  <section class="s3-hero ve-hero">
+    <h1>Video Editor</h1>
+    <p>Cut, caption and export Reels, TikToks and Shorts. Every feature free, no watermark, nothing uploaded.</p>
+  </section>
+
+  <div class="ve-app" id="app">
+    <div class="ve-bar card">
+      <div class="row ve-bar-l">
+        <button class="btn ghost small" id="newBtn" title="Start a new, empty project">New</button>
+        <label class="btn ghost small" title="Open a .s3video project file"><svg class="i"><use href="#v-folder"/></svg>Open<input type="file" id="openFile" accept=".s3video,.json,application/json" hidden></label>
+        <button class="btn ghost small" id="saveBtn" title="Save the project as a .s3video file (Ctrl+S)"><svg class="i"><use href="#v-save"/></svg>Save</button>
+        <button class="btn ghost small" id="sampleBtn" title="Load a sample project made in your browser">Sample</button>
+        <span class="ve-sep" aria-hidden="true"></span>
+        <button class="btn ghost small icon" id="undoBtn" aria-label="Undo (Ctrl+Z)" title="Undo (Ctrl+Z)"><svg class="i"><use href="#v-undo"/></svg></button>
+        <button class="btn ghost small icon" id="redoBtn" aria-label="Redo (Ctrl+Shift+Z)" title="Redo (Ctrl+Shift+Z)"><svg class="i"><use href="#v-redo"/></svg></button>
+      </div>
+      <label class="ve-name-wrap"><span class="ve-sr">Project name</span><input class="input ve-name" id="projName" dir="auto" maxlength="120" aria-label="Project name"></label>
+      <div class="row ve-bar-r">
+        <span class="chip" id="saveState" title="Projects autosave in this browser">Saved here</span>
+        <span class="chip" id="codecChip" title="What this browser can export">Checking export…</span>
+        <button class="btn primary" id="exportBtn"><svg class="i"><use href="#i-download"/></svg>Export MP4</button>
+      </div>
+    </div>
+
+    <div class="ve-work">
+      <aside class="card ve-side" aria-label="Media and tools">
+        <div class="seg ve-tabs" role="tablist" aria-label="Panels">
+          <button role="tab" aria-pressed="true" data-tab="media"><svg class="i"><use href="#v-film"/></svg>Media</button>
+          <button role="tab" aria-pressed="false" data-tab="text"><svg class="i"><use href="#v-text"/></svg>Text</button>
+          <button role="tab" aria-pressed="false" data-tab="captions"><svg class="i"><use href="#v-cc"/></svg>Captions</button>
+          <button role="tab" aria-pressed="false" data-tab="trans"><svg class="i"><use href="#v-trans"/></svg>Transitions</button>
+        </div>
+
+        <div class="ve-panel" data-panel="media">
+          <div class="drop ve-drop" id="drop">
+            <input type="file" hidden>
+            <svg class="i"><use href="#i-upload"/></svg>
+            <b>Add videos, photos or music</b>
+            <span class="muted">Drop files or click. Stays on this device.</span>
+          </div>
+          <div class="ve-bin" id="bin"></div>
+          <p class="faint ve-hint" id="binHint">Tip: drag items onto the timeline, or press + to add at the playhead. Drop a video on the Music track to use just its sound.</p>
+        </div>
+
+        <div class="ve-panel" data-panel="text" hidden>
+          <p class="muted ve-hint">Click a style to add it at the playhead, then edit it on the right.</p>
+          <div class="ve-presets" id="textPresets"></div>
+        </div>
+
+        <div class="ve-panel" data-panel="captions" hidden>
+          <div class="stack">
+            <div class="seg ve-capstyle" id="capPreset" role="group" aria-label="Caption style">
+              <button data-v="bold" aria-pressed="true">Bold</button><button data-v="box" aria-pressed="false">Box</button>
+              <button data-v="yellow" aria-pressed="false">Yellow</button><button data-v="minimal" aria-pressed="false">Minimal</button>
+            </div>
+            <div class="grid-2">
+              <label class="field">Size<input type="range" id="capSize" min="3" max="12" step="0.5"></label>
+              <label class="field">Height<input type="range" id="capY" min="0.1" max="0.92" step="0.01"></label>
+            </div>
+            <div class="row">
+              <label class="field grow">Font<select class="select" id="capFont"></select></label>
+              <label class="check"><input type="checkbox" id="capPop"> Pop in</label>
+            </div>
+            <div class="row">
+              <button class="btn small" id="capAdd"><svg class="i"><use href="#i-plus"/></svg>Caption at playhead</button>
+              <label class="btn small ghost">Import .srt<input type="file" id="srtFile" accept=".srt,.vtt,text/plain" hidden></label>
+              <button class="btn small ghost" id="srtSave">Export .srt</button>
+            </div>
+            <div class="ve-caplist" id="capList"></div>
+            <label class="field">Type or paste your script
+              <textarea class="textarea prose ve-script" id="capScript" dir="auto" rows="3" placeholder="One sentence per caption. Arabic works too."></textarea>
+            </label>
+            <button class="btn small" id="capSpread">Spread over the video</button>
+            <p class="faint ve-hint">Captions from speech? The free <a href="https://s3eidat.github.io/transcribe/" target="_blank" rel="noopener">Transcribe</a> tool turns speech into an .srt on your device. Import it here.</p>
+          </div>
+        </div>
+
+        <div class="ve-panel" data-panel="trans" hidden>
+          <p class="muted ve-hint">Select a ◆ marker between two clips on the timeline, then pick a transition.</p>
+          <div class="ve-trans" id="transList"></div>
+          <label class="field">Length <span class="mono" id="trDurOut"></span><input type="range" id="trDur" min="0.2" max="2" step="0.1" value="0.5"></label>
+          <button class="btn small" id="trAll">Apply to every cut</button>
+        </div>
+      </aside>
+
+      <section class="card ve-stage" aria-label="Preview">
+        <div class="ve-view" id="viewWrap">
+          <canvas id="view" width="540" height="960" aria-label="Video preview"></canvas>
+          <div class="ve-empty" id="stageEmpty">
+            <b>Start with your clips</b>
+            <span>Add videos or photos on the left, or</span>
+            <button class="btn small" id="sampleBtn2">open the sample</button>
+          </div>
+        </div>
+        <div class="ve-transport">
+          <button class="btn ghost small icon" id="toStart" aria-label="Go to start (Home)" title="Start (Home)"><svg class="i"><use href="#v-start"/></svg></button>
+          <button class="btn primary icon ve-play" id="playBtn" aria-label="Play (Space)" title="Play / pause (Space, K)"></button>
+          <button class="btn ghost small icon" id="toEnd" aria-label="Go to end (End)" title="End (End)"><svg class="i"><use href="#v-end"/></svg></button>
+          <span class="mono ve-tc" id="tc">0:00.00 / 0:00</span>
+          <button class="btn ghost small icon" id="loopBtn" aria-pressed="false" aria-label="Loop" title="Loop"><svg class="i"><use href="#v-loop"/></svg></button>
+          <span class="grow"></span>
+          <div class="seg ve-aspect" id="aspect" role="group" aria-label="Canvas size">
+            <button data-v="9:16" aria-pressed="true">9:16</button><button data-v="1:1" aria-pressed="false">1:1</button>
+            <button data-v="4:5" aria-pressed="false">4:5</button><button data-v="16:9" aria-pressed="false">16:9</button>
+          </div>
+        </div>
+      </section>
+
+      <aside class="card ve-insp" id="insp" aria-label="Properties"></aside>
+    </div>
+
+    <section class="card ve-tl" aria-label="Timeline">
+      <div class="ve-tl-bar">
+        <button class="btn small" id="splitBtn" title="Split at playhead (S)"><svg class="i"><use href="#v-split"/></svg>Split</button>
+        <button class="btn small ghost" id="dupBtn" title="Duplicate (Ctrl+D)"><svg class="i"><use href="#v-dup"/></svg>Duplicate</button>
+        <button class="btn small ghost" id="delBtn" title="Delete (Delete)"><svg class="i"><use href="#v-del"/></svg>Delete</button>
+        <button class="btn small ghost" id="rippleBtn" title="Delete and close the gap (Shift+Delete)"><svg class="i"><use href="#v-ripple"/></svg>Ripple delete</button>
+        <span class="ve-sep" aria-hidden="true"></span>
+        <button class="btn small ghost" id="snapBtn" aria-pressed="true" title="Snap to clips and playhead"><svg class="i"><use href="#v-snap"/></svg>Snap</button>
+        <button class="btn small ghost" id="magBtn" aria-pressed="true" title="Main track keeps clips together with no gaps"><svg class="i"><use href="#v-magnet"/></svg>Magnetic</button>
+        <button class="btn small ghost" id="addTrack" title="Add an overlay video track (picture in picture)"><svg class="i"><use href="#v-layer"/></svg>Overlay track</button>
+        <span class="grow"></span>
+        <button class="btn ghost small icon" id="zOut" aria-label="Zoom out (-)"><svg class="i"><use href="#v-zout"/></svg></button>
+        <label class="ve-zoom"><span class="ve-sr">Timeline zoom</span><input type="range" id="zoom" min="8" max="400" step="1" aria-label="Timeline zoom"></label>
+        <button class="btn ghost small icon" id="zIn" aria-label="Zoom in (+)"><svg class="i"><use href="#v-zin"/></svg></button>
+      </div>
+      <div class="ve-tl-body">
+        <div class="ve-heads" id="heads"></div>
+        <div class="ve-scroll" id="tlScroll">
+          <div class="ve-inner" id="tlInner">
+            <div class="ve-ruler" id="ruler"></div>
+            <div class="ve-lanes" id="lanes"></div>
+            <div class="ve-ph" id="playhead"><i></i></div>
+            <div class="ve-snapline" id="snapline" hidden></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <p class="faint ve-keys">Keys: Space play · J / K / L shuttle · ← → frame (Shift: 1 s) · S split · Delete · Shift+Delete ripple · Ctrl+D duplicate · Ctrl+Z / Ctrl+Shift+Z · + / − zoom · Ctrl+S save</p>
+  </div>
+</main>
+
+<dialog class="ve-dlg card" id="exportDlg" aria-labelledby="exTitle">
+  <div class="row between"><h2 id="exTitle">Export video</h2><button class="btn ghost icon small" id="exClose" aria-label="Close"><svg class="i"><use href="#i-x"/></svg></button></div>
+  <div id="exSetup" class="stack">
+    <div class="grid-2">
+      <label class="field">Resolution<select class="select" id="exRes"><option value="720">720p</option><option value="1080">1080p</option></select></label>
+      <label class="field">Frame rate<select class="select" id="exFps"><option value="24">24 fps</option><option value="25">25 fps</option><option value="30">30 fps</option><option value="60">60 fps</option></select></label>
+    </div>
+    <label class="field">Quality<select class="select" id="exQ"><option value="std">Standard (smaller file)</option><option value="high">High</option></select></label>
+    <p class="muted" id="exInfo"></p>
+    <button class="btn primary big" id="exGo">Export</button>
+  </div>
+  <div id="exRun" class="stack" hidden>
+    <div class="ve-bar-prog"><i id="exBar"></i></div>
+    <p class="mono muted" id="exLabel">Starting…</p>
+    <button class="btn" id="exCancel">Cancel</button>
+  </div>
+  <div id="exDone" class="stack" hidden>
+    <video id="exVideo" controls playsinline></video>
+    <p class="muted" id="exStats"></p>
+    <div class="row"><button class="btn primary" id="exSave"><svg class="i"><use href="#i-download"/></svg>Download MP4</button><button class="btn ghost" id="exAgain">Export again</button></div>
+  </div>
+  <p class="faint">No watermark, no upload: the video is encoded by your browser on this device.</p>
+</dialog>
+
+<dialog class="ve-dlg card" id="relinkDlg" aria-labelledby="rlTitle">
+  <h2 id="rlTitle">Find your media</h2>
+  <p class="muted">Projects store media by name. Pick these files from your device and they'll be linked again:</p>
+  <ul class="ve-missing" id="rlList"></ul>
+  <div class="row">
+    <label class="btn primary">Locate files<input type="file" id="rlFiles" multiple accept="video/*,image/*,audio/*" hidden></label>
+    <button class="btn ghost" id="rlLater">Later</button>
+  </div>
+</dialog>
+
+<script src="lib/mp4box.all.min.js"></script>
+<script src="lib/mp4-muxer.js"></script>
+<script src="js/model.js"></script>
+<script src="js/render.js"></script>
+<script src="js/media.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/export.js"></script>
+<script src="js/ui.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
